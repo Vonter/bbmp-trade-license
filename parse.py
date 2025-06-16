@@ -123,6 +123,9 @@ def main():
         existing_df = pl.read_parquet('data/combined.parquet')
         df = pl.concat([existing_df, df])
         
+    # Drop rows where Application Number is ""
+    df = df.filter(pl.col('Application Number') != "")
+        
     # Add derived columns
     df = df.with_columns(pl.col('Application Number').str.slice(0, 1).alias('Application Type'))
     df = df.with_columns(pl.col('Application Type').map_elements(lambda x: 'Renewal' if x == 'R' else 'New', return_dtype=pl.Utf8).alias('Application Type'))
@@ -134,9 +137,9 @@ def main():
     df = df.with_columns(pl.col('Major Trade').cast(pl.Categorical))
     df = df.with_columns(pl.col('Minor Trade').cast(pl.Categorical))
     df = df.with_columns(pl.col('Sub Trade').cast(pl.Categorical))
-    df = df.with_columns(pl.col('Paid Amount').cast(pl.Float64))
-    df = df.with_columns(pl.col('Penalty Amount').cast(pl.Float64))
-    df = df.with_columns(pl.col('Total Paid Amount').cast(pl.Float64))
+    df = df.with_columns(pl.col('Paid Amount').cast(pl.Float64, strict=False))
+    df = df.with_columns(pl.col('Penalty Amount').cast(pl.Float64, strict=False))
+    df = df.with_columns(pl.col('Total Paid Amount').cast(pl.Float64, strict=False))
     df = df.with_columns(pl.col('Constituency').cast(pl.Categorical))
     df = df.with_columns(pl.col('Ward').cast(pl.Categorical))
 
@@ -148,9 +151,6 @@ def main():
 
     # Sort by Date descending
     df = df.sort('Application ID', descending=True)
-
-    # Drop null rows
-    df = df.drop_nulls()
 
     # Save as Parquet
     df.write_parquet('data/combined.parquet')
