@@ -2,7 +2,7 @@
 
 Dataset of trade license applications from BBMP. Sourced from the [BBMP Trade License Website](https://trade.bbmpgov.in/Forms/frmApplicationStatusPublic.aspx).
 
-Explore the dataset [here](https://hyparam.github.io/demos/hyparquet/?key=https%3A%2F%2Fraw.githubusercontent.com%2FVonter%2Fbbmp-trade-license%2Fmaster%2Fdata%trade-license.parquet).
+Explore the dataset [here](https://hyparam.github.io/demos/hyparquet/?key=https%3A%2F%2Fraw.githubusercontent.com%2FVonter%2Fbbmp-trade-license%2Fmain%2Fdata%2Ftrade-license.parquet).
 
 ## Data
 
