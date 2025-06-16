@@ -5,7 +5,7 @@ import polars as pl
 from pathlib import Path
 
 def get_all_existing_applications():
-    """Get all existing application numbers/dates from data/combined.parquet."""
+    """Get all existing application numbers/dates from Parquet files."""
     existing_apps = {}
     
     # Load from Parquet
@@ -13,8 +13,10 @@ def get_all_existing_applications():
         df = pl.read_parquet('data/combined.parquet')
         existing_apps = df.select(['Application Number', 'Date']).to_dicts()
         existing_apps = {int(app['Application Number'][9:]): (int("20" + app['Application Number'][1:3]), int(app['Application Number'][7:9]), int(app['Application Number'][5:7])) for app in existing_apps if app['Date'] is not None}
-    except:
-        return {}
+    except:       
+        df = pl.read_parquet('data/trade-license.parquet')
+        existing_apps = df.select(['Application ID', 'Date']).to_dicts()
+        existing_apps = {int(app['Application ID']): (int(app['Date'].year), int(app['Date'].month), int(app['Date'].day)) for app in existing_apps if app['Date'] is not None}
 
     return existing_apps
 
