@@ -1,0 +1,4 @@
+__pycache__
+raw
+data/combined.parquet
+data/trade-license.csv.gz
