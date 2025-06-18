@@ -117,11 +117,6 @@ def main():
     else:
         logging.info("No new records to process, skipping Parquet creation.")
         return
-
-    # Append existing DataFrame to new DataFrame
-    if existing_apps:
-        existing_df = pl.read_parquet('data/combined.parquet')
-        df = pl.concat([existing_df, df])
         
     # Drop rows where Application Number is ""
     df = df.filter(pl.col('Application Number') != "")
@@ -145,6 +140,11 @@ def main():
 
     # Sort columns
     df = df.select(['Application Number', 'Application Type', 'Date', 'Application ID', 'Applicant Name', 'Trade Name', 'Trade Type', 'Major Trade', 'Minor Trade', 'Sub Trade', 'Paid Amount', 'Penalty Amount', 'Total Paid Amount', 'Telephone Number', 'Mobile Number', 'E-Mail ID', 'Constituency', 'Ward', 'Address Door Number', 'Address Street', 'Address Area', 'Address PIN', 'Zonal Classification', 'Property ID', 'Property Survey Number', 'BESCOM RR Number', 'VAT Number', 'TIN Number', 'Old Application Number'])
+
+    # Append existing DataFrame to new DataFrame
+    if existing_apps:
+        existing_df = pl.read_parquet('data/combined.parquet')
+        df = pl.concat([existing_df, df])
         
     # Remove duplicates based on Application Number and trade information
     df = df.unique(subset=['Application Number', 'Major Trade', 'Minor Trade', 'Sub Trade'])

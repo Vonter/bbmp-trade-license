@@ -55,7 +55,7 @@ def fetch_missing_applications():
     last_success_date = (year, month, day)
     consecutive_failures = consecutive_invalid = 0
 
-    max_date_attempts = 3
+    max_date_attempts = 2
     max_consecutive_invalid_attempts = 10
 
     while app_num > 0:
