@@ -10,9 +10,9 @@ def fetch_application(license_num):
     return requests.post(
         'https://trade.bbmpgov.in/Forms/frmApplicationStatusPublic.aspx',
         headers={
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:138.0) Gecko/20100101 Firefox/138.0',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Language': 'en-US,en;q=0.9',
             'Accept-Encoding': 'gzip, deflate, br, zstd',
             'Content-Type': 'application/x-www-form-urlencoded',
             'Origin': 'https://trade.bbmpgov.in',
@@ -24,9 +24,9 @@ def fetch_application(license_num):
             'ToolkitScriptManager1_HiddenField': '',
             '__EVENTTARGET': '',
             '__EVENTARGUMENT': '',
-            '__VIEWSTATE': '/wEPDwUKMTcwNDA4ODI5Mw9kFgJmD2QWAgIDD2QWAgIDD2QWAgIBD2QWAgIBD2QWBgIrD2QWAmYPZBYCAgEPPCsAEQIBEBYAFgAWAAwUKwAAZAI5DzwrABECARAWABYAFgAMFCsAAGQCRQ8UKwAFZCgpWFN5c3RlbS5HdWlkLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkkNWRjNjIyYzYtOGZlMy00ODVjLWIwOGEtZTJiZjM5ZTI1ODBlAgEUKwABPCsABAEAZmRkGAMFJGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbXVsdGl2aWV3MQ8PZGZkBSNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGd2UmVtYXJrcw9nZAUsY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRndlRyYWRlSW5mb3JtYXRpb24PZ2SOUkV05Wpxb3B/yepQzOGGcaZwxf7eEurfGitU2+qr6g==',
+            '__VIEWSTATE': '/wEPDwUKMTcwNDA4ODI5Mw9kFgJmD2QWAgIDD2QWAgIDD2QWAgIBD2QWAgIBD2QWBgIrD2QWAmYPZBYCAgEPPCsAEQIBEBYAFgAWAAwUKwAAZAI5DzwrABECARAWABYAFgAMFCsAAGQCRQ8UKwAFZCgpWFN5c3RlbS5HdWlkLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkkNTU4MjE5ZDgtYThiOC00MWI2LTg0OTEtNWZmOWUyMmY1ZWJlAgEUKwABPCsABAEAZmRkGAMFJGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkbXVsdGl2aWV3MQ8PZGZkBSNjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGd2UmVtYXJrcw9nZAUsY3RsMDAkQ29udGVudFBsYWNlSG9sZGVyMSRndlRyYWRlSW5mb3JtYXRpb24PZ2Q0I6Kg19sJxOH1ttUyCDMLXICMqFesk5+ke4u72LkpxA==',
             '__VIEWSTATEGENERATOR': 'EA52BDA5',
-            '__EVENTVALIDATION': '/wEdAAPgoOWtpqRBwHWZ4MJ1gHo/Ai4zgla7TU2Rym4tehP4uo5MW6XMaFjzT9nUdsIknotNgqy55/CIIamJztmsYz0N2sCjSa/oNelPW+ydyIU8WQ==',
+            '__EVENTVALIDATION': '/wEdAAOroPKqVE3IBLb/LrTQCS9CAi4zgla7TU2Rym4tehP4uo5MW6XMaFjzT9nUdsIknotwX78YDDAhwgJDHaBoAFKQJEy9Fa9PwXwqOr6iN/XAxw==',
             'ctl00$ContentPlaceHolder1$txtApplicationNumber': license_num,
             'ctl00$ContentPlaceHolder1$btnSearch': 'Get Status'
         }
